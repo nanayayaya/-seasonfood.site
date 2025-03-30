@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能图片匹配系统演示 - SeasonFood.site</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .demo-section {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .demo-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .demo-section p {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .demo-container {
+            margin-top: 30px;
+        }
+        
+        .controls {
+            margin: 20px 0;
+            display: flex;
+            gap: 15px;
+        }
+        
+        button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #219653;
+        }
+        
+        select, textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            margin-bottom: 15px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .feature-card h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+        
+        .keyword-tag {
+            display: inline-block;
+            background: #e1f5ee;
+            color: #27ae60;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .smart-image-tooltip {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(46, 204, 113, 0.9);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        
+        .content-with-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .content-with-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">SeasonFood.site</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="body-assessment.html">体质评估</a></li>
+                    <li><a href="health-goals.html">健康目标</a></li>
+                    <li><a href="allergen-filter.html">过敏原筛选</a></li>
+                    <li><a href="gallery.html">图片库</a></li>
+                    <li><a href="smart-image-demo.html" class="active">智能图片</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>智能图片匹配系统演示</h1>
+            <p class="section-intro">体验我们的AI驱动内容与图片智能匹配技术，自动分析页面内容并找到最相关的图片素材</p>
+        </section>
+        
+        <section class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>语义分析提取关键词</h3>
+                <p>使用NLP技术自动分析文本内容，提取最具代表性的关键词，准确捕捉内容核心主题。</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>动态调用图片API</h3>
+                <p>基于提取的关键词智能查询Pexels图片库，找到最匹配的高质量图片，提升内容相关性。</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>自适应终端展示</h3>
+                <p>针对不同设备优化图片展示效果，自动调整布局和图片尺寸，确保最佳用户体验。</p>
+            </div>
+        </section>
+        
+        <!-- 演示1: 实时文本分析和图片匹配 -->
+        <section class="demo-section">
+            <h2>实时内容分析与图片匹配</h2>
+            <p>在下面的文本框中输入任何内容，系统将分析文字提取关键词，并自动匹配相关图片</p>
+            
+            <div class="content-with-images">
+                <div>
+                    <textarea id="article-editor" placeholder="输入一段关于食物、健康或营养的文字，至少20个字..."></textarea>
+                    <div class="controls">
+                        <button id="extract-keywords">提取关键词</button>
+                    </div>
+                    <div id="keywords-output" class="keyword-list"></div>
+                </div>
+                
+                <div id="article-images" class="smart-image-container">
+                    <div class="smart-image-placeholder">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM13.96 12.29L11.21 15.83L9.25 13.47L6.5 17H17.5L13.96 12.29Z" fill="#cccccc"/>
+                        </svg>
+                        <p>输入内容后自动匹配图片</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 演示2: 布局选择器 -->
+        <section class="demo-section">
+            <h2>自适应布局展示</h2>
+            <p>选择不同的布局方式，体验智能匹配图片的多种展示效果</p>
+            
+            <div class="controls">
+                <select id="layout-selector">
+                    <option value="grid">网格布局</option>
+                    <option value="masonry">瀑布流布局</option>
+                    <option value="slider">滑动布局</option>
+                </select>
+            </div>
+            
+            <div id="demo-images" class="demo-container"></div>
+        </section>
+        
+        <!-- 演示3: 与现有内容匹配 -->
+        <section class="demo-section">
+            <h2>现有内容智能匹配</h2>
+            <p id="dynamic-content">季节性饮食是一种遵循自然规律的健康生活方式。春季应多食用新鲜绿色蔬菜和芽类食物，如韭菜、春笋、菠菜等，它们富含维生素和矿物质，有助于肝脏排毒。夏季则适合食用清热解暑的食物，如西瓜、黄瓜、苦瓜等水分充足的蔬果。秋季干燥，宜选择滋阴润肺的食物，如梨、百合、银耳等。冬季天寒地冻，可适当进食温热性食物，如羊肉、姜、韭菜等，以增强身体抵抗力。通过合理搭配每个季节的应季食材，不仅能获得最丰富的营养，还能保持身体与自然的和谐平衡。</p>
+            
+            <div class="controls">
+                <button id="add-smart-image">为上述内容生成匹配图片</button>
+            </div>
+            
+            <div id="dynamic-images" class="demo-container"></div>
+        </section>
+        
+        <!-- 演示4: 自动初始化示例 -->
+        <section class="demo-section">
+            <h2>声明式智能图片区域</h2>
+            <p>只需添加简单的HTML属性，即可实现自动智能匹配</p>
+            
+            <div class="demo-container">
+                <!-- 这个区域会自动识别上面的内容并匹配图片 -->
+                <div data-smart-image data-content-source=".demo-section:last-child h2, .demo-section:last-child p" data-layout="grid"></div>
+            </div>
+            
+            <pre><code>&lt;div data-smart-image 
+     data-content-source=".your-content-selector" 
+     data-layout="grid"&gt;&lt;/div&gt;</code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>SeasonFood.site致力于提供季节性饮食指南，帮助您根据自己的体质和季节变化调整饮食习惯。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p>Email: info@seasonfood.site</p>
+                    <p>电话: (123) 456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SeasonFood.site. 保留所有权利。</p>
+                <p class="attribution">图片来源: <a href="https://www.pexels.com" target="_blank">Pexels</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 加载脚本 -->
+    <script src="js/pexels-api.js"></script>
+    <script src="js/smart-image-matcher.js"></script>
+    <script src="js/smart-image-demo.js"></script>
+</body>
+</html> 
