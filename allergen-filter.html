@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allergen Filter | SeasonFood.site</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assessment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">SeasonFood<span>.site</span></a>
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#ingredients">Ingredients</a></li>
+                        <li><a href="index.html#recipes">Recipes</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="assessment-header">
+        <div class="container">
+            <div class="assessment-intro">
+                <h1>Spring Allergen Filter</h1>
+                <p>Spring is allergy season. Filter recipes to exclude specific allergens while maintaining nutritional balance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Allergen Filter Section -->
+    <section class="assessment-section">
+        <div class="container">
+            <!-- Progress Indicator -->
+            <div class="progress-container">
+                <div class="progress-steps">
+                    <span>Step <span id="current-question">1</span> of 2</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <!-- Allergen Filter Form -->
+            <div class="assessment-container">
+                <form id="allergen-form" class="assessment-form">
+                    <!-- Step 1: Allergen Selection -->
+                    <div class="question-container active" data-question="1">
+                        <h3>Select Allergens to Exclude</h3>
+                        <p>Choose all ingredients you need to avoid in your diet.</p>
+
+                        <div class="allergen-group">
+                            <h4>Common Allergens</h4>
+                            <div class="options">
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="gluten" name="allergens" value="gluten">
+                                    <label for="gluten">Gluten</label>
+                                </div>
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="dairy" name="allergens" value="dairy">
+                                    <label for="dairy">Dairy</label>
+                                </div>
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="eggs" name="allergens" value="eggs">
+                                    <label for="eggs">Eggs</label>
+                                </div>
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="peanuts" name="allergens" value="peanuts">
+                                    <label for="peanuts">Peanuts</label>
+                                </div>
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="tree-nuts" name="allergens" value="tree-nuts">
+                                    <label for="tree-nuts">Tree Nuts</label>
+                                </div>
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="soy" name="allergens" value="soy">
+                                    <label for="soy">Soy</label>
+                                </div>
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="fish" name="allergens" value="fish">
+                                    <label for="fish">Fish</label>
+                                </div>
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="shellfish" name="allergens" value="shellfish">
+                                    <label for="shellfish">Shellfish</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="allergen-group">
+                            <h4>Additional Spring Sensitivities</h4>
+                            <div class="options">
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="strawberries" name="allergens" value="strawberries">
+                                    <label for="strawberries">Strawberries</label>
+                                </div>
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="citrus" name="allergens" value="citrus">
+                                    <label for="citrus">Citrus Fruits</label>
+                                </div>
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="asparagus" name="allergens" value="asparagus">
+                                    <label for="asparagus">Asparagus</label>
+                                </div>
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="onions" name="allergens" value="onions">
+                                    <label for="onions">Onions & Garlic</label>
+                                </div>
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="mushrooms" name="allergens" value="mushrooms">
+                                    <label for="mushrooms">Mushrooms</label>
+                                </div>
+                                <div class="option allergen-option">
+                                    <input type="checkbox" id="nightshades" name="allergens" value="nightshades">
+                                    <label for="nightshades">Nightshades</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Dietary Preferences -->
+                    <div class="question-container" data-question="2">
+                        <h3>Additional Dietary Preferences</h3>
+                        <p>Help us understand your dietary needs beyond allergens.</p>
+
+                        <div class="options">
+                            <div class="option">
+                                <input type="radio" id="omnivore" name="dietType" value="omnivore">
+                                <label for="omnivore">Omnivore</label>
+                                <div class="option-desc">I eat both plant and animal products</div>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="vegetarian" name="dietType" value="vegetarian">
+                                <label for="vegetarian">Vegetarian</label>
+                                <div class="option-desc">I avoid meat but may eat eggs and dairy</div>
+                            </div>
+                            <div class="option">
+                                <input type="radio" id="vegan" name="dietType" value="vegan">
+                                <label for="vegan">Vegan</label>
+                                <div class="option-desc">I avoid all animal products</div>
+                            </div>
+                        </div>
+
+                        <h4>Additional Requirements</h4>
+                        <div class="options">
+                            <div class="option allergen-option">
+                                <input type="checkbox" id="low-fodmap" name="dietary" value="low-fodmap">
+                                <label for="low-fodmap">Low FODMAP</label>
+                            </div>
+                            <div class="option allergen-option">
+                                <input type="checkbox" id="paleo" name="dietary" value="paleo">
+                                <label for="paleo">Paleo-friendly</label>
+                            </div>
+                            <div class="option allergen-option">
+                                <input type="checkbox" id="keto" name="dietary" value="keto">
+                                <label for="keto">Keto-friendly</label>
+                            </div>
+                            <div class="option allergen-option">
+                                <input type="checkbox" id="low-carb" name="dietary" value="low-carb">
+                                <label for="low-carb">Low Carb</label>
+                            </div>
+                            <div class="option allergen-option">
+                                <input type="checkbox" id="low-sugar" name="dietary" value="low-sugar">
+                                <label for="low-sugar">Low Sugar</label>
+                            </div>
+                            <div class="option allergen-option">
+                                <input type="checkbox" id="low-sodium" name="dietary" value="low-sodium">
+                                <label for="low-sodium">Low Sodium</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="assessment-buttons">
+                        <button type="button" id="prev-btn" class="btn">Previous</button>
+                        <button type="button" id="next-btn" class="btn highlight">Next</button>
+                        <button type="button" id="submit-btn" class="btn" style="display: none;">Show Recipes</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Results Container (initially hidden) -->
+            <div id="results-container" class="results-container" style="display: none;">
+                <div id="filteredRecipes" class="filtered-recipes-container">
+                    <div class="results-header">
+                        <h2>Your Allergen-Friendly Recipes</h2>
+                        <p>We've filtered our spring recipe collection to match your dietary needs.</p>
+                    </div>
+
+                    <div class="recommendation-tabs">
+                        <button class="rec-tab active" data-panel="breakfast-panel">Breakfast</button>
+                        <button class="rec-tab" data-panel="lunch-panel">Lunch</button>
+                        <button class="rec-tab" data-panel="dinner-panel">Dinner</button>
+                        <button class="rec-tab" data-panel="snacks-panel">Snacks</button>
+                    </div>
+
+                    <!-- Recipe Panels -->
+                    <div id="breakfast-panel" class="rec-panel active">
+                        <div class="foods-grid" id="breakfast-recipes">
+                            <!-- Recipes will be dynamically populated here -->
+                        </div>
+                    </div>
+
+                    <div id="lunch-panel" class="rec-panel">
+                        <div class="foods-grid" id="lunch-recipes">
+                            <!-- Recipes will be dynamically populated here -->
+                        </div>
+                    </div>
+
+                    <div id="dinner-panel" class="rec-panel">
+                        <div class="foods-grid" id="dinner-recipes">
+                            <!-- Recipes will be dynamically populated here -->
+                        </div>
+                    </div>
+
+                    <div id="snacks-panel" class="rec-panel">
+                        <div class="foods-grid" id="snacks-recipes">
+                            <!-- Recipes will be dynamically populated here -->
+                        </div>
+                    </div>
+
+                    <div class="no-recipes" style="display: none;">
+                        <h3>No Matching Recipes</h3>
+                        <p>We couldn't find recipes that match all your criteria. Try reducing the number of allergens or dietary restrictions.</p>
+                    </div>
+                    
+                    <div class="results-buttons">
+                        <button type="button" id="print-recipes-btn" class="btn">Print Recipes</button>
+                        <button type="button" id="email-recipes-btn" class="btn">Email Recipes</button>
+                        <button type="button" id="retake-btn" class="btn accent-btn">Change Preferences</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="/">SeasonFood<span>.site</span></a>
+                    <p>Explore the perfect harmony of spring foods and wellness</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Explore</h4>
+                        <a href="index.html#features">Tools</a>
+                        <a href="index.html#regional">Regional Delicacies</a>
+                        <a href="index.html#trends">Food Trends</a>
+                        <a href="index.html#ingredients">Seasonal Ingredients</a>
+                        <a href="index.html#recipes">Recipes</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Tools</h4>
+                        <a href="body-assessment.html">Body Type Assessment</a>
+                        <a href="health-goals.html">Health Goal Planner</a>
+                        <a href="allergen-filter.html">Allergen Filter</a>
+                        <a href="#">Nutrition Database</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>About</h4>
+                        <a href="#">Our Mission</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Use</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SeasonFood.site - Your Guide to Seasonal Eating</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://kit.fontawesome.com/3010b1eef5.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="allergen-filter.js"></script>
+</body>
+</html> 

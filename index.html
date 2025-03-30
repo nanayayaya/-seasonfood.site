@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cherry Blossom Season & Spring Food Guide | SeasonFood.site</title>
+    <meta name="description" content="Discover the best seasonal foods, cherry blossom delicacies, spring recipes, and dietary advice. Find trending ingredients like chipotle and sustainable eating habits.">
+    <link rel="canonical" href="https://seasonfood.site/" />
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/">SeasonFood<span>.site</span></a>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features & Tools</a>
+                    <a href="#regional">Regional Delicacies</a>
+                    <a href="#trends">Food Trends</a>
+                    <a href="#ingredients">Seasonal Ingredients</a>
+                    <a href="#recipes">Recipes</a>
+                    <a href="#sustainability">Sustainability</a>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+            <div class="hero">
+                <h1>Eat in Spring</h1>
+                <p class="subtitle">Cherry Blossom Season & Seasonal Food Guide</p>
+                <a href="#explore" class="btn primary-btn">Explore Spring Foods</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features & Tools Section -->
+    <section id="features" class="section features-section">
+        <div class="container">
+            <h2>Seasonal Food Tools & Features</h2>
+            <p class="section-intro">Personalized solutions for your spring dietary needs</p>
+            
+            <!-- 功能分类导航 -->
+            <div class="features-nav">
+                <button class="feature-tab active" data-tab="personalized">Personalized Recommendations</button>
+                <button class="feature-tab" data-tab="interactive">Interactive Tools</button>
+                <button class="feature-tab" data-tab="community">Community</button>
+                <button class="feature-tab" data-tab="nutrition">Nutrition Tracking</button>
+                <button class="feature-tab" data-tab="knowledge">Knowledge & Culture</button>
+                <button class="feature-tab" data-tab="technology">Tech Features</button>
+                <button class="feature-tab" data-tab="sustainability">Sustainability</button>
+            </div>
+            
+            <!-- 功能内容区域 -->
+            <div class="features-content">
+                <!-- 个性化饮食推荐 -->
+                <div class="feature-panel active" id="personalized">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-wendywei-1656666.jpg" alt="Body type assessment">
+                                <span class="feature-badge">New</span>
+                            </div>
+                            <h3>Body Type Assessment</h3>
+                            <p>Receive personalized spring food recommendations based on your body constitution (dry, damp, warm, or cool).</p>
+                            <a href="body-assessment.html" class="feature-btn">Take Assessment</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-ella-olsson-572949-1640770.jpg" alt="Health goal planner">
+                                <span class="feature-badge">Popular</span>
+                            </div>
+                            <h3>Health Goal Planner</h3>
+                            <p>Set specific health goals (immunity, detox, energy) and get a customized spring eating plan.</p>
+                            <a href="health-goals.html" class="feature-btn">Create My Plan</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-vanessa-loring-5082954.jpg" alt="Allergen filter">
+                            </div>
+                            <h3>Allergen Filter</h3>
+                            <p>Spring is allergy season. Filter recipes to exclude specific allergens while maintaining nutritional balance.</p>
+                            <a href="allergen-filter.html" class="feature-btn">Set Preferences</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 互动和实用工具 -->
+                <div class="feature-panel" id="interactive">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-pixabay-326281.jpg" alt="Seasonal food calendar">
+                                <span class="feature-badge">Updated</span>
+                            </div>
+                            <h3>Seasonal Food Calendar</h3>
+                            <p>Interactive calendar showing which spring ingredients are at peak freshness each week.</p>
+                            <a href="#" class="feature-btn">View Calendar</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-mali-64208.jpg" alt="Freshness guide">
+                            </div>
+                            <h3>Freshness Detection Guide</h3>
+                            <p>Learn how to select and determine the freshness of spring produce with our visual guides.</p>
+                            <a href="#" class="feature-btn">Explore Guide</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-brigitte-tohm-36757-239581.jpg" alt="Ingredient substitute finder">
+                            </div>
+                            <h3>Ingredient Substitute Finder</h3>
+                            <p>Can't find a specific spring ingredient? Get instant suggestions for seasonal alternatives.</p>
+                            <a href="#" class="feature-btn">Find Substitutes</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-cottonbro-3338542.jpg" alt="Cooking method calculator">
+                                <span class="feature-badge">Popular</span>
+                            </div>
+                            <h3>Cooking Method Calculator</h3>
+                            <p>Enter your ingredients and amounts to get optimal cooking times and methods for perfect results.</p>
+                            <a href="#" class="feature-btn">Calculate Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 社区功能 -->
+                <div class="feature-panel" id="community">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-ella-olsson-572949-1640777.jpg" alt="Spring recipe sharing platform">
+                            </div>
+                            <h3>Recipe Sharing Platform</h3>
+                            <p>Upload and share your own spring recipe creations with our community of seasonal food enthusiasts.</p>
+                            <a href="#" class="feature-btn">Share Recipe</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-ella-olsson-572949-3026802.jpg" alt="Seasonal challenges">
+                                <span class="feature-badge">Trending</span>
+                            </div>
+                            <h3>Seasonal Challenges</h3>
+                            <p>Join challenges like "Weekly Spring Vegetable Challenge" to discover new ingredients and recipes.</p>
+                            <a href="#" class="feature-btn">Join Challenge</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-pixabay-262967.jpg" alt="Local ingredient map">
+                            </div>
+                            <h3>Local Ingredient Map</h3>
+                            <p>Find farmers' markets and farms near you offering fresh spring ingredients and produce.</p>
+                            <a href="#" class="feature-btn">Explore Map</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-frans-van-heerden-201846-670705.jpg" alt="Expert Q&A">
+                            </div>
+                            <h3>Expert Q&A Forum</h3>
+                            <p>Get answers to your spring diet questions from nutritionists, chefs, and seasonal eating experts.</p>
+                            <a href="#" class="feature-btn">Ask Expert</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 营养和健康跟踪 -->
+                <div class="feature-panel" id="nutrition">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-ella-olsson-572949-1640773.jpg" alt="Spring food nutrition database">
+                                <span class="feature-badge">Detailed</span>
+                            </div>
+                            <h3>Nutritional Database</h3>
+                            <p>Explore detailed nutritional information for all spring foods, with filtering by vitamins and minerals.</p>
+                            <a href="#" class="feature-btn">Search Database</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-elletakesphotos-1660030.jpg" alt="Seasonal diet tracker">
+                            </div>
+                            <h3>Seasonal Diet Tracker</h3>
+                            <p>Track the variety of spring ingredients you consume and get diversity analysis and recommendations.</p>
+                            <a href="#" class="feature-btn">Start Tracking</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-picjumbo-com-55570-196643.jpg" alt="Body response journal">
+                            </div>
+                            <h3>Body Response Journal</h3>
+                            <p>Record and analyze changes in energy, skin, and mood as you incorporate seasonal spring foods.</p>
+                            <a href="#" class="feature-btn">Start Journal</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 深度知识和文化内容 -->
+                <div class="feature-panel" id="knowledge">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-valeriya-842545.jpg" alt="Traditional medicine insights">
+                            </div>
+                            <h3>Traditional Medicine Insights</h3>
+                            <p>Understand spring ingredients through the lens of traditional medicine systems from around the world.</p>
+                            <a href="#" class="feature-btn">Learn More</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-janetrangdoan-769969.jpg" alt="Global spring food traditions">
+                                <span class="feature-badge">Video</span>
+                            </div>
+                            <h3>Global Spring Food Traditions</h3>
+                            <p>Watch videos exploring spring dietary traditions from different cultures around the world.</p>
+                            <a href="#" class="feature-btn">Watch Videos</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-pixabay-36438.jpg" alt="Weather-based recommendations">
+                            </div>
+                            <h3>Weather-Based Recommendations</h3>
+                            <p>Get dietary suggestions based on current weather conditions - different foods for spring chill vs. warmth.</p>
+                            <a href="#" class="feature-btn">Check Today</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 技术与便利功能 -->
+                <div class="feature-panel" id="technology">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-cottonbro-3297882.jpg" alt="AR food identification">
+                                <span class="feature-badge">AI</span>
+                            </div>
+                            <h3>AR Food Identification</h3>
+                            <p>Scan spring ingredients with your camera to get information, recipes, and purchasing suggestions.</p>
+                            <a href="#" class="feature-btn">Try Scanner</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-antonmislawsky-246747.jpg" alt="Voice guided cooking">
+                            </div>
+                            <h3>Voice Guided Cooking</h3>
+                            <p>Hands-free voice guidance for cooking spring recipes, with step-by-step instructions and timers.</p>
+                            <a href="#" class="feature-btn">Start Cooking</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-pixabay-327098.jpg" alt="Local ingredient ordering">
+                                <span class="feature-badge">New</span>
+                            </div>
+                            <h3>Local Ingredient Ordering</h3>
+                            <p>Connect directly to local farms and organic suppliers to order seasonal spring ingredients.</p>
+                            <a href="#" class="feature-btn">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 可持续性功能 -->
+                <div class="feature-panel" id="sustainability">
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-quang-nguyen-vinh-222549-2318966.jpg" alt="Carbon footprint calculator">
+                            </div>
+                            <h3>Carbon Footprint Calculator</h3>
+                            <p>Understand the environmental impact of different spring ingredient choices and meal combinations.</p>
+                            <a href="#" class="feature-btn">Calculate Impact</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-ella-olsson-572949-1640772.jpg" alt="Zero waste menu generator">
+                                <span class="feature-badge">Eco</span>
+                            </div>
+                            <h3>Zero Waste Menu Generator</h3>
+                            <p>Enter ingredients you already have, and we'll suggest recipes that maximize utilization and minimize waste.</p>
+                            <a href="#" class="feature-btn">Generate Menu</a>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="images/pexels-pixabay-326281.jpg" alt="Seasonal preservation guide">
+                            </div>
+                            <h3>Seasonal Preservation Guide</h3>
+                            <p>Detailed tutorials on preserving abundant spring ingredients for use throughout the year.</p>
+                            <a href="#" class="feature-btn">View Guides</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-cta">
+                <h3>Ready to transform your spring eating experience?</h3>
+                <p>Create a free account to unlock all features and personalize your seasonal food journey.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn primary-btn">Sign Up Free</a>
+                    <a href="#" class="btn secondary-btn">Take the Tour</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Spring Foods -->
+    <section id="regional" class="section regional-section">
+        <div class="container">
+            <h2>Regional Spring Delicacies Around the World</h2>
+            <div class="regions-container">
+                <div class="region-card featured-region">
+                    <img src="images/pexels-valeriya-842545.jpg" alt="Cherry blossom tea and sakura mochi">
+                    <div class="region-content">
+                        <h3><span class="highlight-text">Cherry Blossom Season in Japan</span></h3>
+                        <p>During sakura (cherry blossom) season, limited-edition salt-preserved cherry blossom tea and sakura mochi become sought-after experiential foods. The delicate flavor of cherry blossoms represents the ephemeral beauty of spring, drawing crowds to traditional tea houses and sakura viewing parties (hanami).</p>
+                        <a href="#" class="text-link">Explore Cherry Blossom Cuisine <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="region-card">
+                    <img src="images/pexels-pixabay-36438.jpg" alt="Fresh artichokes and vegetables">
+                    <div class="region-content">
+                        <h3>Mediterranean: Fresh Artichokes & Wild Asparagus</h3>
+                        <p>Fresh artichokes and wild asparagus have become spring menu staples in high-end Mediterranean restaurants, showcasing the region's seasonal bounty.</p>
+                    </div>
+                </div>
+                
+                <div class="region-card">
+                    <img src="images/pexels-janetrangdoan-769969.jpg" alt="Asian soup dish">
+                    <div class="region-content">
+                        <h3>Southeast Asia: Humidity-Reducing Foods</h3>
+                        <p>To combat spring humidity, Southeast Asian cuisine features moisture-reducing formulas like Job's tears soup with poria, adapting traditional wisdom to seasonal needs.</p>
+                    </div>
+                </div>
+                
+                <div class="region-card">
+                    <img src="images/pexels-frans-van-heerden-201846-670705.jpg" alt="Nordic landscape with birch trees">
+                    <div class="region-content">
+                        <h3>Nordic: Birch Sap Harvesting</h3>
+                        <p>During the thawing period, Nordic cultures supplement vitamin D with birch sap harvesting experiences and recipes like fermented birch sap bread.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Trends Section -->
+    <section id="trends" class="section trends-section">
+        <div class="container">
+            <h2>Spring Food Trends 2024-2025</h2>
+            <p class="section-intro highlight-text">🍏 Updated weekly with real-time trends and insights 🍎</p>
+            
+            <!-- 放大的Chipotle特色板块 -->
+            <div class="featured-trend">
+                <div class="featured-trend-content">
+                    <div class="featured-trend-text">
+                        <h3>Chipotle Flavor Explosion</h3>
+                        <p>The smoky, complex flavor of chipotle is finding its way into spring dishes, adding depth to plant-based meals and bringing a warm dimension to seasonal ingredients. This distinctive flavor profile combines smokiness, subtle heat, and rich earthy notes that enhance both traditional and innovative spring recipes.</p>
+                        <p>Chefs are incorporating chipotle in everything from vegetable preparations to sauces, marinades and even desserts, creating a new dimension of flavor complexity that complements the freshness of spring produce.</p>
+                    </div>
+                    <div class="featured-trend-image">
+                        <img src="images/Chipotle.jpg" alt="Chipotle peppers and dishes">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="trend-cards">
+                <div class="trend-card">
+                    <div class="card-img">
+                        <img src="images/Plant-Based.jpg" alt="Plant-based meals with colorful vegetables">
+                    </div>
+                    <div class="card-content">
+                        <h3>Plant-Based Revolution</h3>
+                        <p>Plant-based diets continue to rise in popularity, with innovative alternatives to animal products becoming mainstream. The focus is shifting to whole foods rather than processed alternatives.</p>
+                    </div>
+                </div>
+
+                <div class="trend-card">
+                    <div class="card-img">
+                        <img src="images/Mushrooms.jpg" alt="Specialty mushrooms arranged on wooden board">
+                    </div>
+                    <div class="card-content">
+                        <h3>Specialty Mushrooms</h3>
+                        <p>Exotic varieties like morels, lion's mane, and oyster mushrooms are gaining culinary attention for their unique flavors and adaptability in both traditional and innovative recipes.</p>
+                    </div>
+                </div>
+
+                <div class="trend-card">
+                    <div class="card-img">
+                        <img src="images/Buckwheat.jpg" alt="Buckwheat groats and flour">
+                    </div>
+                    <div class="card-content">
+                        <h3>Buckwheat Renaissance</h3>
+                        <p>This gluten-free ancient grain is experiencing a revival in modern cooking, appearing in everything from pancakes to noodles, valued for its nutty flavor and nutritional profile.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-trends">
+                <h3>Social Media Food Trends That are Redefining Consumer Choices</h3>
+                <ul class="trends-list">
+                    <li><span>Dopamine-inducing color palettes</span> - Strawberry red + pea green + lemon yellow in vibrant salads and bowls</li>
+                    <li><span>ASMR cooking videos</span> - Spring bamboo shoot cutting sounds + rain white noise</li>
+                    <li><span>Zero-waste challenges</span> - Complete ingredient utilization gaining traction among eco-conscious consumers</li>
+                    <li><span>Lacto-vegetarian combinations</span> - Free-range eggs + plant-based cheese satisfying both environmental and protein needs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Ingredients Section -->
+    <section id="ingredients" class="section ingredients-section">
+        <div class="container">
+            <h2>Spring's Freshest Seasonal Ingredients</h2>
+            <p class="section-intro">Embrace the bounty of spring with these peak-season fruits and vegetables</p>
+            
+            <div class="ingredients-grid">
+                <div class="ingredient-item">
+                    <img src="images/pexels-brigitte-tohm-36757-239581.jpg" alt="Fresh strawberries">
+                    <h3>Strawberries</h3>
+                    <p>Peak season brings the sweetest, most fragrant berries loaded with vitamin C and antioxidants.</p>
+                </div>
+                <div class="ingredient-item">
+                    <img src="images/pexels-pixabay-326281.jpg" alt="White and green asparagus">
+                    <h3>White Asparagus</h3>
+                    <p>This spring delicacy can be charcoal grilled or paired with green asparagus and Parma ham.</p>
+                </div>
+                <div class="ingredient-item">
+                    <img src="images/pexels-pixabay-262967.jpg" alt="Fresh mushrooms">
+                    <h3>Morel Mushrooms</h3>
+                    <p>Fresh morels pair beautifully with poached eggs and cream sauce, showcasing their delicate flavor.</p>
+                </div>
+                <div class="ingredient-item">
+                    <img src="images/pexels-pixabay-361184.jpg" alt="Fresh beetroot">
+                    <h3>Beetroot</h3>
+                    <p>Spring beetroots are sweeter and perfect for salads or as a side dish, packed with nutrients.</p>
+                </div>
+                <div class="ingredient-item">
+                    <img src="images/pexels-mali-64208.jpg" alt="Fresh greens">
+                    <h3>Fiddlehead Ferns</h3>
+                    <p>In Japan, they're commonly prepared as tempura, seasoned with black garlic and honey.</p>
+                </div>
+                <div class="ingredient-item">
+                    <img src="images/pexels-ella-olsson-572949-1640770.jpg" alt="Fresh kale leaves">
+                    <h3>Kale</h3>
+                    <p>Spring kale is more tender and less bitter, perfect for smoothies and fresh salads.</p>
+                </div>
+            </div>
+            
+            <div class="benefits-container">
+                <h3>Benefits of Eating Seasonally in Spring</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-spa"></i>
+                        <h4>Skin Beautification</h4>
+                        <p>Spring vegetables are rich in vitamins and antioxidants that promote healthy, glowing skin.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Energy Boost</h4>
+                        <p>Fresh spring produce helps revitalize the body after winter, increasing energy and vitality.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Environmental Impact</h4>
+                        <p>Eating seasonally reduces carbon footprint associated with long-distance food transportation.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-heart"></i>
+                        <h4>Cardiovascular Health</h4>
+                        <p>Many spring vegetables support heart health through their high fiber and antioxidant content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipes Section -->
+    <section id="recipes" class="section recipes-section">
+        <div class="container">
+            <h2>Innovative Spring Recipes</h2>
+            <p class="section-intro">Incorporate seasonal ingredients into delicious and creative dishes</p>
+            
+            <div class="feature-recipe">
+                <h3>Avengers-Inspired Seasonal Menu</h3>
+                <div class="avengers-recipes">
+                    <div class="recipe-card">
+                        <img src="images/pexels-ella-olsson-572949-1640770.jpg" alt="Nordic Berry Power Bowl">
+                        <h4>Thor's Nordic Berry Power Bowl</h4>
+                        <p>A lightning-charged breakfast featuring Nordic berries, birch syrup, and protein-rich seeds. This hearty bowl channels Thor's Asgardian strength with seasonal spring ingredients.</p>
+                        <span class="recipe-tag">Breakfast</span>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <img src="images/pexels-ella-olsson-572949-1640773.jpg" alt="Green Smoothie Bowl">
+                        <h4>Hulk's Green Machine Smoothie</h4>
+                        <p>This powerful green smoothie combines spring kale, spinach, avocado and pea protein for incredible strength. The vibrant color matches Hulk's signature shade while delivering nutrient-dense energy.</p>
+                        <span class="recipe-tag">Drink</span>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <img src="images/pexels-pixabay-361184.jpg" alt="Beet & Buckwheat Salad">
+                        <h4>Black Widow's Beet & Buckwheat Salad</h4>
+                        <p>A sophisticated yet deadly combination of earthy spring beets, protein-rich buckwheat, and a touch of chipotle for unexpected heat—elegant and powerful, just like Natasha Romanoff.</p>
+                        <span class="recipe-tag">Lunch</span>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <img src="images/pexels-ella-olsson-572949-3026802.jpg" alt="Energy Bowl">
+                        <h4>Iron Man's Energy Bowl</h4>
+                        <p>A high-tech blend of seasonal superfoods including beetroot juice, quinoa energy bars, and antioxidant-rich berries designed to fuel a genius billionaire's busy day.</p>
+                        <span class="recipe-tag">Pre-workout</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recipe-categories">
+                <div class="category">
+                    <h3>Fusion Traditions</h3>
+                    <p>Like Tokyo's "Amber Kaiseki," these recipes blend traditional seasonal cooking with modern culinary aesthetics, highlighting the changing seasons.</p>
+                    <a href="#" class="text-link">Explore Fusion Recipes <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="category">
+                    <h3>East-West Combinations</h3>
+                    <p>Combining Chinese culinary elements with Western techniques creates unique spring menus that honor traditions while innovating flavors.</p>
+                    <a href="#" class="text-link">Discover Cross-Cultural Dishes <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section id="sustainability" class="section sustainability-section">
+        <div class="container">
+            <h2>Sustainable Spring Eating</h2>
+            <div class="sustainability-content">
+                <div class="sustainability-text">
+                    <h3>Zero-Waste Cooking Principles</h3>
+                    <p>Embrace the full potential of spring ingredients by utilizing every part of the plant, from root to stem:</p>
+                    <ul class="eco-list">
+                        <li>Use carrot tops in pesto and chimichurri sauces</li>
+                        <li>Pickle watermelon rinds and broccoli stems</li>
+                        <li>Create vegetable stock from scraps</li>
+                        <li>Regrow green onions and lettuce from kitchen scraps</li>
+                    </ul>
+                    <a href="#" class="btn primary-btn">Get Zero-Waste Tips</a>
+                </div>
+                <div class="sustainability-image">
+                    <img src="images/pexels-ella-olsson-572949-1640777.jpg" alt="Zero waste cooking with vegetables">
+                </div>
+            </div>
+            
+            <div class="health-focus">
+                <h3>Health Benefits of Seasonal Spring Eating</h3>
+                <div class="health-cards">
+                    <div class="health-card">
+                        <img src="images/pexels-vanessa-loring-5082954.jpg" alt="Immune system support foods">
+                        <h4>Immune System Support</h4>
+                        <p>Spring vegetables like kale and spinach provide vital nutrients that help strengthen the immune system after winter.</p>
+                    </div>
+                    <div class="health-card">
+                        <img src="images/pexels-elletakesphotos-1660030.jpg" alt="Digestive health foods">
+                        <h4>Digestive Health</h4>
+                        <p>Fiber-rich spring greens and probiotics from fermented spring vegetables support optimal gut health.</p>
+                    </div>
+                    <div class="health-card">
+                        <img src="images/pexels-picjumbo-com-55570-196643.jpg" alt="Natural detoxifying foods">
+                        <h4>Natural Detoxification</h4>
+                        <p>Many spring vegetables have natural detoxifying properties that help cleanse the body after heavier winter eating.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Presentation -->
+    <section class="section visual-section">
+        <div class="container">
+            <h2>The Art of Spring Food Presentation</h2>
+            <div class="visual-grid">
+                <div class="visual-item">
+                    <img src="images/pexels-quang-nguyen-vinh-222549-2318966.jpg" alt="Beautiful spring food plating with edible flowers">
+                    <h3>Floral Accents</h3>
+                    <p>Use edible spring flowers like violets, pansies, and chamomile to add natural color and delicate flavor.</p>
+                </div>
+                <div class="visual-item">
+                    <img src="images/pexels-catscoming-920220.jpg" alt="Leaf garnishes on spring dishes">
+                    <h3>Verdant Garnishes</h3>
+                    <p>Fresh herb leaves and microgreens create a visual connection to spring's renewal and growth.</p>
+                </div>
+                <div class="visual-item">
+                    <img src="images/pexels-ash-craig-122861-376464.jpg" alt="Color composition in spring dish presentation">
+                    <h3>Dopamine-Inducing Color Palettes</h3>
+                    <p>Combining strawberry red, pea green, and lemon yellow creates visually stimulating dishes that excite before the first bite.</p>
+                </div>
+                <div class="visual-item">
+                    <img src="images/pexels-cottonbro-3338542.jpg" alt="Textural contrast in spring dishes">
+                    <h3>Textural Diversity</h3>
+                    <p>Contrast crunchy spring vegetables with creamy elements for an engaging multisensory experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter-section">
+        <div class="container">
+            <div class="newsletter-container">
+                <div class="newsletter-content">
+                    <h2>Stay Updated with Seasonal Food Inspiration</h2>
+                    <p>Subscribe to our newsletter for seasonal recipes, ingredient guides, and sustainability tips delivered to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn primary-btn">Subscribe</button>
+                    </form>
+                </div>
+                <div class="newsletter-image">
+                    <img src="images/pexels-pixabay-327098.jpg" alt="Seasonal food newsletter preview">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="/">SeasonFood<span>.site</span></a>
+                    <p>Your guide to eating seasonally and sustainably throughout the year.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Explore</h4>
+                        <a href="#trends">Food Trends</a>
+                        <a href="#ingredients">Seasonal Ingredients</a>
+                        <a href="#recipes">Recipes</a>
+                        <a href="#sustainability">Sustainability</a>
+                        <a href="#" class="highlight-link">Cherry Blossom Season</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>About</h4>
+                        <a href="#">Our Mission</a>
+                        <a href="#">The Team</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SeasonFood.site. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

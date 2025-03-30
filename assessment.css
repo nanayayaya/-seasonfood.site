@@ -1,0 +1,971 @@
+/* 
+ * Body Type Assessment Styles
+ * 与网站主样式协调的评估工具样式
+ */
+
+/* 评估页面专用头部样式 */
+.assessment-header {
+    min-height: 60vh;
+}
+
+/* 评估部分样式 */
+.assessment-section {
+    background-color: var(--white);
+    padding-top: 3rem;
+}
+
+.assessment-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.assessment-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(46, 204, 113, 0.1);
+    overflow: hidden;
+}
+
+/* 评估表单样式 */
+.assessment-form {
+    padding: 2.5rem;
+}
+
+.progress-container {
+    margin-bottom: 2.5rem;
+}
+
+.progress-bar {
+    height: 8px;
+    background-color: var(--subtle-green);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 8.33%; /* 1/12 初始宽度 */
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    display: block;
+    text-align: right;
+}
+
+/* 问题容器 */
+.question-container {
+    display: none;
+}
+
+.question-container.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-container h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.question-text {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--light-text);
+}
+
+/* 选项样式 */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.option {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: var(--subtle-green);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option:hover {
+    background-color: rgba(46, 204, 113, 0.1);
+    transform: translateY(-2px);
+}
+
+.option input[type="radio"] {
+    margin-top: 3px;
+    accent-color: var(--primary-color);
+}
+
+.option-text {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.option.selected {
+    background-color: rgba(46, 204, 113, 0.2);
+    border-left: 4px solid var(--primary-color);
+}
+
+/* 按钮区域 */
+.assessment-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* 添加绿色按钮样式 */
+.assessment-buttons .btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.2);
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.assessment-buttons .btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(46, 204, 113, 0.3);
+}
+
+/* 高亮按钮 */
+.assessment-buttons .btn.highlight {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+    }
+}
+
+/* 结果容器样式 */
+.results-container {
+    padding: 2.5rem;
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.body-type-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: var(--subtle-green);
+    border-radius: 15px;
+}
+
+.type-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 2.5rem;
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.2);
+}
+
+.type-details {
+    text-align: left;
+}
+
+.type-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#body-type {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.type-details p {
+    color: var(--light-text);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* 推荐标签页 */
+.recommendations {
+    margin-top: 3rem;
+}
+
+.recommendation-tabs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.rec-tab {
+    padding: 1rem 1.5rem;
+    background-color: var(--subtle-green);
+    border: none;
+    border-radius: 30px;
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--light-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rec-tab:hover {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.rec-tab.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.2);
+}
+
+/* 推荐内容面板 */
+.rec-panel {
+    display: none;
+}
+
+.rec-panel.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+/* 食物网格样式 */
+.foods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.food-item {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+}
+
+.food-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.15);
+}
+
+.food-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.food-item:hover img {
+    transform: scale(1.05);
+}
+
+.food-item h4 {
+    font-size: 1.1rem;
+    padding: 0.8rem 0.5rem 0.4rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.food-item p {
+    font-size: 0.85rem;
+    padding: 0 0.8rem 0.8rem;
+    color: var(--light-text);
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* 食谱提示样式 */
+.food-recipe {
+    font-size: 0.8rem;
+    background-color: rgba(46, 204, 113, 0.1);
+    padding: 0.8rem;
+    border-top: 1px dashed rgba(46, 204, 113, 0.3);
+    color: var(--text-color);
+    text-align: left;
+}
+
+.food-recipe i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+/* 限制食物样式 */
+.limit-item {
+    border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.limit-item h4 {
+    color: #e74c3c;
+}
+
+.limit-item::before {
+    content: "×";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #e74c3c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 1;
+}
+
+/* 替代食品建议样式 */
+.food-alternative {
+    font-size: 0.8rem;
+    background-color: rgba(231, 76, 60, 0.05);
+    padding: 0.8rem;
+    border-top: 1px dashed rgba(231, 76, 60, 0.2);
+    color: var(--text-color);
+    text-align: left;
+}
+
+.food-alternative i {
+    color: #e67e22;
+    margin-right: 5px;
+}
+
+/* 草药项目样式 */
+.herb-item {
+    border: 1px solid rgba(46, 204, 113, 0.2);
+}
+
+.herb-item h4 {
+    color: var(--primary-color);
+}
+
+.herb-usage {
+    font-size: 0.8rem;
+    background-color: rgba(46, 204, 113, 0.08);
+    padding: 0.8rem;
+    border-top: 1px dashed rgba(46, 204, 113, 0.2);
+    color: var(--text-color);
+    text-align: left;
+}
+
+.herb-usage i {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+/* 结果CTA */
+.results-cta {
+    margin-top: 4rem;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--subtle-green);
+    border-radius: 15px;
+}
+
+.results-cta h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.results-cta p {
+    font-size: 1rem;
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+}
+
+.results-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.accent-btn {
+    background-color: var(--text-color);
+    color: var(--white);
+}
+
+.accent-btn:hover {
+    background-color: #162c27;
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 58, 52, 0.3);
+}
+
+/* 资源部分 */
+.resources-section {
+    background-color: var(--light-accent);
+    margin-top: 4rem;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.resource-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(46, 204, 113, 0.12);
+}
+
+.resource-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.resource-card h3 {
+    padding: 1.2rem 1.2rem 0.5rem;
+}
+
+.resource-card p {
+    padding: 0 1.2rem 1.2rem;
+    color: var(--light-text);
+}
+
+.resource-card .text-link {
+    margin: 0 1.2rem 1.2rem;
+    display: inline-block;
+}
+
+/* 响应式样式 */
+@media (max-width: 768px) {
+    .assessment-form,
+    .results-container {
+        padding: 1.5rem;
+    }
+    
+    .body-type-result {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    
+    .type-details {
+        text-align: center;
+    }
+    
+    .assessment-buttons {
+        flex-direction: column;
+    }
+    
+    .assessment-buttons button {
+        width: 100%;
+    }
+    
+    .recommendation-tabs {
+        justify-content: center;
+    }
+    
+    .foods-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+    
+    .share-options {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* 给未回答问题添加摇晃效果 */
+.question-container.unanswered {
+    animation: shake 0.5s ease;
+    border-left: 3px solid #e74c3c;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* 悬浮提示样式 */
+.option-tooltip {
+    position: absolute;
+    background-color: rgba(46, 204, 113, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* 分享结果卡片样式 */
+.share-section {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--subtle-green);
+    border-radius: 15px;
+}
+
+.share-section h2 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.share-section p {
+    color: var(--light-text);
+    margin-bottom: 2rem;
+}
+
+.share-preview {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    padding: 0.5rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#share-card-container {
+    position: relative;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#share-card {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.share-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--white);
+    border: 1px solid var(--subtle-green);
+    padding: 0.7rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+.share-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2);
+}
+
+.share-btn i {
+    font-size: 1.1rem;
+}
+
+.download-share-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+.download-share-btn:hover {
+    background-color: #27ae60;
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
+    transform: translateY(-2px);
+}
+
+.download-share-btn i {
+    margin-right: 8px;
+}
+
+/* 悬浮提示样式 */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -70px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.75rem;
+    pointer-events: none;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Allergen Filter Specific Styles */
+.allergen-checkbox {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-light);
+    padding: 20px 25px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.allergen-checkbox:hover {
+    background-color: #f0f5f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.allergen-checkbox input[type="checkbox"] {
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.allergen-checkbox.selected {
+    background-color: var(--primary-light-color);
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
+}
+
+.allergens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 20px 0 30px 0;
+}
+
+.allergen-group {
+    margin-bottom: 25px;
+}
+
+.allergen-group h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.recipe-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 15px;
+}
+
+.recipe-tab {
+    padding: 10px 20px;
+    background: #f8f9fa;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.recipe-tab.active, .recipe-tab:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.recipe-panel {
+    display: none;
+}
+
+.recipe-panel.active {
+    display: block;
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+.recipe-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.recipe-content {
+    padding: 15px;
+}
+
+.recipe-title {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: var(--dark-text);
+}
+
+.recipe-description {
+    color: var(--muted-text);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.recipe-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.recipe-tag {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 20px;
+    background: #f0f0f0;
+    color: var(--dark-text);
+}
+
+.allergen-free {
+    background: #e6f7e6;
+    color: #2c7a2c;
+}
+
+.recipe-button {
+    display: inline-block;
+    padding: 8px 12px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.recipe-button:hover {
+    background: var(--primary-dark);
+}
+
+.no-recipes {
+    text-align: center;
+    padding: 40px 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    margin: 30px 0;
+}
+
+.no-recipes h3 {
+    color: var(--dark-text);
+    margin-bottom: 10px;
+}
+
+.no-recipes p {
+    color: var(--muted-text);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.filtered-recipes-container {
+    padding: 20px 0;
+}
+
+.results-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Responsive adjustments for Allergen Filter */
+@media (max-width: 768px) {
+    .allergens-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recipes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recipe-tabs {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .allergens-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.button-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.button-area button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-area button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button-area button#prev-btn {
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+}
+
+.button-area button#prev-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.button-area button.highlight {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+} 

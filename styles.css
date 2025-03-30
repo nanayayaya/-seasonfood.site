@@ -1,0 +1,1444 @@
+/* 
+ * SeasonFood.site - Styles
+ * 使用苹果风格色系，强调春季食物氛围
+ */
+
+:root {
+    /* 明亮绿色和白色主题 - 简洁高级 */
+    --primary-color: #2ecc71; /* 明亮绿色 */
+    --secondary-color: #27ae60; /* 深绿色，用于hover效果 */
+    --accent-color: #1abc9c; /* 青绿色，用于强调 */
+    --light-accent: #e8f8f5; /* 极浅绿色 - 用于区块背景 */
+    --background-color: #ffffff; /* 纯白背景 */
+    --text-color: #1e3a34; /* 深绿文本色 */
+    --light-text: #3e8c74; /* 中绿文本色 */
+    --white: #ffffff;
+    --subtle-green: #f0f9f6; /* 替代浅灰色的极浅绿色 */
+    --card-shadow: 0 8px 20px rgba(46, 204, 113, 0.08);
+    
+    /* 排版 */
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Source Sans Pro', sans-serif;
+}
+
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 排版 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.section-intro {
+    font-size: 1.2rem;
+    color: var(--light-text);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+/* 突出显示的文字样式 */
+.highlight-text {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+    animation: pulse 2s infinite;
+    font-size: 1.1rem;
+}
+
+.highlight-text i {
+    margin: 0 8px;
+    font-size: 0.9rem;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 4px 16px rgba(46, 204, 113, 0.5);
+        transform: scale(1.02);
+    }
+    100% {
+        box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+        transform: scale(1);
+    }
+}
+
+/* 按钮 */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.primary-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+}
+
+.secondary-btn {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.secondary-btn:hover {
+    background-color: #16a085;
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 188, 156, 0.3);
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.text-link i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.text-link:hover i {
+    transform: translateX(5px);
+}
+
+/* 头部和导航 */
+.header {
+    background: linear-gradient(rgba(46, 204, 113, 0.7), rgba(26, 188, 156, 0.8)), url('images/pexels-vishnusriraj-2827263.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 2rem 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+/* 如果图片未能加载，提供备用渐变背景 */
+@supports not (background-image: url('images/pexels-vishnusriraj-2827263.jpg')) {
+    .header {
+        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.navbar.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(46, 204, 113, 0.1);
+    padding: 0.8rem 5%;
+}
+
+.navbar.fixed-nav .logo a {
+    color: var(--primary-color);
+}
+
+.navbar.fixed-nav .logo span {
+    color: var(--secondary-color);
+}
+
+.navbar.fixed-nav .nav-links a {
+    color: var(--text-color);
+}
+
+.navbar.fixed-nav .mobile-menu {
+    color: var(--text-color);
+}
+
+.logo a {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.1);
+    z-index: 100;
+}
+
+.nav-links.active a {
+    color: var(--text-color);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--subtle-green);
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.hero {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* 趋势部分 */
+.trends-section {
+    background-color: var(--white);
+}
+
+/* 特色趋势（Chipotle）部分 */
+.featured-trend {
+    margin-bottom: 3rem;
+    background-color: var(--subtle-green);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.featured-trend:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(46, 204, 113, 0.15);
+}
+
+.featured-trend-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.featured-trend-text {
+    flex: 1;
+    padding: 2.5rem;
+}
+
+.featured-trend-text h3 {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.featured-trend-text h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.featured-trend-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.featured-trend-image {
+    flex: 1;
+    height: 400px;
+}
+
+.featured-trend-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 普通趋势卡片样式 */
+.trend-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.trend-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.trend-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.trend-card:hover .card-img img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.social-trends {
+    background-color: var(--subtle-green);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 3rem;
+}
+
+.trends-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.trends-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.trends-list li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.trends-list span {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+/* 食材部分 */
+.ingredients-section {
+    background-color: var(--light-accent);
+    position: relative;
+}
+
+.ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.ingredient-item {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.ingredient-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(46, 204, 113, 0.15);
+}
+
+.ingredient-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.ingredient-item h3 {
+    padding: 1.2rem 1.2rem 0.5rem;
+    color: var(--text-color);
+}
+
+.ingredient-item p {
+    padding: 0 1.2rem 1.2rem;
+    color: var(--light-text);
+}
+
+.benefits-container {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: var(--card-shadow);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.benefit-card:hover {
+    background-color: var(--subtle-green);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* 地域部分 */
+.regional-section {
+    background-color: var(--white);
+}
+
+.regions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.region-card {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.region-card:hover {
+    transform: translateY(-8px);
+}
+
+.region-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.region-content {
+    padding: 1.5rem;
+}
+
+.tech-feature {
+    background-color: var(--subtle-green);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.tech-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.tech-content img {
+    width: 40%;
+    border-radius: 10px;
+}
+
+/* 食谱部分 */
+.recipes-section {
+    background-color: var(--light-accent);
+}
+
+.feature-recipe {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--card-shadow);
+}
+
+.avengers-recipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.recipe-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.08);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.recipe-card:hover {
+    transform: translateY(-8px);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.recipe-card h4 {
+    padding: 1.2rem 1.2rem 0.5rem;
+}
+
+.recipe-card p {
+    padding: 0 1.2rem 1.2rem;
+    color: var(--light-text);
+}
+
+.recipe-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.seasonal-menu {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--card-shadow);
+}
+
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+.menu-table th, .menu-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--subtle-green);
+}
+
+.menu-table th {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.menu-table tr:last-child td {
+    border-bottom: none;
+}
+
+.recipe-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.category {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+/* 可持续发展部分 */
+.sustainability-section {
+    background-color: var(--white);
+}
+
+.sustainability-content {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: center;
+}
+
+.sustainability-text {
+    flex: 1;
+}
+
+.sustainability-image {
+    flex: 1;
+}
+
+.sustainability-image img {
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+}
+
+.eco-list {
+    list-style: none;
+    margin: 1.5rem 0 2rem;
+}
+
+.eco-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem;
+    position: relative;
+}
+
+.eco-list li::before {
+    content: '✓';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.health-focus {
+    background-color: var(--subtle-green);
+    border-radius: 15px;
+    padding: 2.5rem;
+}
+
+.health-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.health-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.health-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.health-card h4, .health-card p {
+    padding: 0 1.2rem;
+}
+
+.health-card h4 {
+    margin-top: 1.2rem;
+}
+
+.health-card p {
+    padding-bottom: 1.2rem;
+}
+
+/* 视觉呈现部分 */
+.visual-section {
+    background-color: var(--light-accent);
+}
+
+.visual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.visual-item {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.visual-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.visual-item h3, .visual-item p {
+    padding: 0 1.2rem;
+}
+
+.visual-item h3 {
+    margin-top: 1.2rem;
+}
+
+.visual-item p {
+    padding-bottom: 1.2rem;
+    color: var(--light-text);
+}
+
+/* 订阅部分 */
+.newsletter-section {
+    background-color: var(--white);
+}
+
+.newsletter-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background-color: var(--subtle-green);
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: var(--card-shadow);
+}
+
+.newsletter-content {
+    flex: 1;
+}
+
+.newsletter-image {
+    flex: 1;
+}
+
+.newsletter-image img {
+    border-radius: 15px;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid transparent;
+    border-radius: 30px 0 0 30px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-form input:focus {
+    border-color: var(--primary-color);
+}
+
+.newsletter-form button {
+    border: none;
+    border-radius: 0 30px 30px 0;
+    padding: 0 1.5rem;
+    cursor: pointer;
+}
+
+/* 页脚 */
+.footer {
+    background-color: var(--text-color);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    flex: 1;
+}
+
+.footer-logo a {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.footer-logo span {
+    color: var(--primary-color);
+}
+
+.footer-logo p {
+    margin-top: 1rem;
+    color: #aed3c4;
+}
+
+.footer-links {
+    flex: 2;
+    display: flex;
+    justify-content: space-around;
+}
+
+.link-group h4 {
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.link-group a {
+    display: block;
+    color: #aed3c4;
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.link-group a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(46, 204, 113, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(174, 211, 196, 0.2);
+}
+
+.footer-bottom p {
+    color: #aed3c4;
+    font-size: 0.9rem;
+}
+
+/* 淡入动画 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .sustainability-content,
+    .tech-content,
+    .newsletter-container {
+        flex-direction: column;
+    }
+    
+    .tech-content img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .menu-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .section {
+        padding: 3rem 0;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input {
+        border-radius: 30px;
+        margin-bottom: 1rem;
+    }
+    
+    .newsletter-form button {
+        border-radius: 30px;
+    }
+}
+
+/* 媒体查询调整 */
+@media (max-width: 992px) {
+    .featured-trend-content {
+        flex-direction: column-reverse;
+    }
+    
+    .featured-trend-image {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .featured-trend-text {
+        padding: 2rem;
+    }
+    
+    .featured-trend-text h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Features Section */
+.features-section {
+    background-color: var(--subtle-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.features-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/pexels-lum3n-44775-1028599.jpg') no-repeat right bottom;
+    background-size: 30%;
+    opacity: 0.07;
+    z-index: 0;
+}
+
+.features-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Features Navigation */
+.features-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.feature-tab {
+    background: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-family: var(--body-font);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--light-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.feature-tab:hover {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.feature-tab.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+}
+
+/* Features Content */
+.features-content {
+    margin-bottom: 4rem;
+}
+
+.feature-panel {
+    display: none;
+}
+
+.feature-panel.active {
+    display: block;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Feature Cards */
+.feature-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(46, 204, 113, 0.15);
+}
+
+.feature-icon {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.feature-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.feature-card:hover .feature-icon img {
+    transform: scale(1.05);
+}
+
+.feature-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 20px;
+    z-index: 2;
+    box-shadow: 0 3px 10px rgba(26, 188, 156, 0.3);
+}
+
+.feature-card h3 {
+    padding: 1.2rem 1.2rem 0.5rem;
+    font-size: 1.3rem;
+    color: var(--text-color);
+}
+
+.feature-card p {
+    padding: 0 1.2rem;
+    color: var(--light-text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.feature-btn {
+    display: inline-block;
+    margin: 1rem 1.2rem 1.2rem;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--subtle-green);
+    color: var(--primary-color);
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.feature-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+/* Features CTA */
+.features-cta {
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+}
+
+.features-cta h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.features-cta p {
+    font-size: 1.1rem;
+    color: var(--light-text);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .feature-tab {
+        font-size: 0.8rem;
+        padding: 0.7rem 1.2rem;
+    }
+    
+    .features-cta {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .features-nav {
+        gap: 0.3rem;
+    }
+    
+    .feature-tab {
+        font-size: 0.7rem;
+        padding: 0.6rem 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .features-cta h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .features-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .feature-tab {
+        width: 80%;
+    }
+}
+
+/* 添加featured-region样式，使Cherry Blossom区域更加显眼 */
+.featured-region {
+    border: 2px solid #4caf50;
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-region::before {
+    content: "Featured";
+    position: absolute;
+    top: 10px;
+    right: -35px;
+    background: #4caf50;
+    color: white;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.featured-region img {
+    transform: scale(1.02);
+    transition: transform 0.5s ease;
+}
+
+.featured-region:hover img {
+    transform: scale(1.05);
+}
+
+.featured-region .region-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.featured-region .highlight-text {
+    background-color: rgba(76, 175, 80, 0.15);
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* 添加高亮链接样式 */
+.highlight-link {
+    color: #4caf50 !important;
+    font-weight: 600;
+    border-left: 3px solid #4caf50;
+    padding-left: 10px !important;
+    position: relative;
+}
+
+.highlight-link::after {
+    content: "New";
+    font-size: 0.6rem;
+    background: #4caf50;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    right: -25px;
+}
+
+/* 修改文本链接样式 */
+.text-link {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.text-link:hover {
+    color: #388e3c;
+    transform: translateX(5px);
+}
+
+.text-link i {
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+.text-link:hover i {
+    margin-left: 10px;
+}
+
+/* Header Styles */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo a {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    display: block;
+    white-space: nowrap; /* 防止logo文字换行 */
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+/* Navigation Styles */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+} 

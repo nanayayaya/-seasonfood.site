@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Type Assessment | SeasonFood.site</title>
+    <meta name="description" content="Discover your body constitution type (dry, damp, warm, or cool) and get personalized spring food recommendations.">
+    <link rel="canonical" href="https://seasonfood.site/body-assessment.html" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assessment.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header assessment-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="/">SeasonFood<span>.site</span></a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html#features">Features & Tools</a>
+                    <a href="index.html#trends">Food Trends</a>
+                    <a href="index.html#ingredients">Seasonal Ingredients</a>
+                    <a href="index.html#recipes">Recipes</a>
+                    <a href="index.html#sustainability">Sustainability</a>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+            <div class="hero">
+                <h1>Body Type Assessment</h1>
+                <p class="subtitle">Discover your seasonal eating profile</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Assessment Section -->
+    <section class="section assessment-section">
+        <div class="container">
+            <div class="assessment-intro">
+                <h2>Personalized Spring Food Recommendations</h2>
+                <p>Traditional medicine systems recognize that each person has a unique body constitution. Understanding your body type can help you choose foods that enhance your wellbeing during spring season.</p>
+                <p>Answer the following questions honestly about how you generally feel (not just currently). Your results will help us recommend spring foods that are most beneficial for your body type.</p>
+            </div>
+
+            <div class="assessment-container">
+                <div id="assessment-form" class="assessment-form">
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <span class="progress-text">Question <span id="current-question">1</span> of 12</span>
+                    </div>
+
+                    <!-- Question 1 -->
+                    <div class="question-container active" data-question="1">
+                        <h3>Body Temperature</h3>
+                        <p class="question-text">How would you describe your usual body temperature compared to others?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="warm">
+                                <span class="option-text">I tend to feel warmer than others and prefer cooler environments</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="cool">
+                                <span class="option-text">I tend to feel colder than others and prefer warmer environments</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="balanced">
+                                <span class="option-text">My body temperature feels balanced most of the time</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-container" data-question="2">
+                        <h3>Skin Condition</h3>
+                        <p class="question-text">How would you describe your skin's natural tendency?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="dry">
+                                <span class="option-text">My skin tends to be dry and may feel rough or flaky</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="oily">
+                                <span class="option-text">My skin tends to be oily or sweaty</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="combination">
+                                <span class="option-text">My skin is combination or changes with the seasons</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-container" data-question="3">
+                        <h3>Digestion</h3>
+                        <p class="question-text">How would you describe your digestion?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="fast">
+                                <span class="option-text">I digest food quickly and may get hungry often</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="slow">
+                                <span class="option-text">I digest food slowly and can feel full for long periods</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="variable">
+                                <span class="option-text">My digestion varies and can be unpredictable</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-container" data-question="4">
+                        <h3>Water Retention</h3>
+                        <p class="question-text">Do you notice water retention or swelling in your body?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q4" value="often">
+                                <span class="option-text">Yes, I often experience water retention or swelling</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="rarely">
+                                <span class="option-text">No, I rarely experience water retention or swelling</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="sometimes">
+                                <span class="option-text">I sometimes experience mild water retention</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question-container" data-question="5">
+                        <h3>Energy Levels</h3>
+                        <p class="question-text">How would you describe your natural energy levels throughout the day?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q5" value="high">
+                                <span class="option-text">High energy, sometimes to the point of restlessness</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="low">
+                                <span class="option-text">Lower energy, I prefer a calm pace and need regular rest</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="variable">
+                                <span class="option-text">Variable energy that fluctuates throughout the day</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question-container" data-question="6">
+                        <h3>Weight Tendency</h3>
+                        <p class="question-text">Which statement best describes your body's natural weight tendency?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q6" value="difficult-gain">
+                                <span class="option-text">I find it difficult to gain weight</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="gain-easily">
+                                <span class="option-text">I gain weight easily, especially around the middle</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="balanced">
+                                <span class="option-text">My weight is relatively stable and proportionate</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question-container" data-question="7">
+                        <h3>Response to Spring Season</h3>
+                        <p class="question-text">How does your body typically respond to spring?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q7" value="allergies">
+                                <span class="option-text">I tend to develop allergies or sinus congestion</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="energized">
+                                <span class="option-text">I feel energized and revitalized</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="transition-issues">
+                                <span class="option-text">The transition is challenging and I may feel out of balance</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question-container" data-question="8">
+                        <h3>Food Cravings</h3>
+                        <p class="question-text">What types of foods do you naturally crave most often?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q8" value="warm-heavy">
+                                <span class="option-text">Warm, heavy foods like rich stews and baked goods</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="cool-light">
+                                <span class="option-text">Cool, light foods like salads and fresh fruit</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="spicy-flavorful">
+                                <span class="option-text">Spicy, flavorful, or stimulating foods</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question-container" data-question="9">
+                        <h3>Sleep Pattern</h3>
+                        <p class="question-text">Which best describes your natural sleep pattern?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q9" value="light">
+                                <span class="option-text">Light sleeper, may wake easily or have insomnia</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="heavy">
+                                <span class="option-text">Heavy sleeper, may sleep deeply and for long periods</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q9" value="balanced">
+                                <span class="option-text">Balanced sleep that is generally refreshing</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question-container" data-question="10">
+                        <h3>Reaction to Humidity</h3>
+                        <p class="question-text">How does your body typically react to humid weather?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q10" value="uncomfortable">
+                                <span class="option-text">I feel uncomfortable, heavy, or sluggish</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="comfortable">
+                                <span class="option-text">I feel comfortable or it doesn't affect me much</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q10" value="like-dry">
+                                <span class="option-text">I prefer dry air and feel better in it</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question-container" data-question="11">
+                        <h3>Mind Temperament</h3>
+                        <p class="question-text">How would you describe your natural mental temperament?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q11" value="active">
+                                <span class="option-text">Active, sometimes racing thoughts or anxiety</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="calm">
+                                <span class="option-text">Calm, sometimes to the point of being slow to react</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q11" value="balanced">
+                                <span class="option-text">Balanced, adaptable, and steady in most situations</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question-container" data-question="12">
+                        <h3>Response to Fasting</h3>
+                        <p class="question-text">How does your body typically respond when you skip a meal?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q12" value="irritable">
+                                <span class="option-text">I get irritable, shaky, or experience a significant energy drop</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="fine">
+                                <span class="option-text">I feel fine and can easily go without eating for hours</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q12" value="variable">
+                                <span class="option-text">It varies depending on my activity level and the day</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="assessment-buttons">
+                        <button id="prev-btn" class="btn secondary-btn" disabled>Previous</button>
+                        <button id="next-btn" class="btn primary-btn">Next</button>
+                        <button id="submit-btn" class="btn primary-btn" style="display: none;">See Results</button>
+                    </div>
+                </div>
+
+                <!-- Results Section (Initially Hidden) -->
+                <div id="results-container" class="results-container" style="display: none;">
+                    <div class="results-header">
+                        <h2>Your Body Type Assessment Results</h2>
+                        <div class="body-type-result">
+                            <div class="type-icon">
+                                <i id="result-icon" class="fas fa-leaf"></i>
+                            </div>
+                            <div class="type-details">
+                                <h3>Your dominant body type is: <span id="body-type">Loading...</span></h3>
+                                <p id="type-description">Analyzing your responses...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recommendations">
+                        <h3>Recommended Spring Foods For Your Body Type</h3>
+                        <div class="recommendation-tabs">
+                            <button class="rec-tab active" data-tab="eat">Foods To Enjoy</button>
+                            <button class="rec-tab" data-tab="limit">Foods To Limit</button>
+                            <button class="rec-tab" data-tab="herbs">Beneficial Herbs & Spices</button>
+                        </div>
+
+                        <div class="recommendation-content">
+                            <div id="eat-content" class="rec-panel active">
+                                <div id="foods-to-eat" class="foods-grid">
+                                    <!-- Foods to eat will be dynamically inserted here -->
+                                </div>
+                            </div>
+                            <div id="limit-content" class="rec-panel">
+                                <div id="foods-to-limit" class="foods-grid">
+                                    <!-- Foods to limit will be dynamically inserted here -->
+                                </div>
+                            </div>
+                            <div id="herbs-content" class="rec-panel">
+                                <div id="beneficial-herbs" class="foods-grid">
+                                    <!-- Beneficial herbs will be dynamically inserted here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-cta">
+                        <h3>Ready for a customized spring eating plan?</h3>
+                        <p>Take your results to the next level with personalized recipes and meal plans.</p>
+                        <div class="results-buttons">
+                            <a href="index.html#features" class="btn primary-btn">Explore More Tools</a>
+                            <button id="retake-btn" class="btn secondary-btn">Retake Assessment</button>
+                            <button id="save-results-btn" class="btn accent-btn">Save Results <i class="fas fa-download"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Resources Section -->
+    <section class="section resources-section">
+        <div class="container">
+            <h2>Learn More About Seasonal Eating</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <img src="images/pexels-cats-coming-839989.jpg" alt="Traditional medicine guide">
+                    <h3>Traditional Medicine Perspectives</h3>
+                    <p>Explore how different traditional medicine systems approach body types and seasonal eating patterns.</p>
+                    <a href="#" class="text-link">Read the Guide <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <img src="images/pexels-ella-olsson-572949-1640772.jpg" alt="Spring recipes">
+                    <h3>Spring Recipe Collection</h3>
+                    <p>Discover delicious recipes tailored to each body type that make the most of seasonal spring ingredients.</p>
+                    <a href="index.html#recipes" class="text-link">Browse Recipes <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="resource-card">
+                    <img src="images/pexels-pixabay-326281.jpg" alt="Seasonal ingredients guide">
+                    <h3>Spring Ingredients Guide</h3>
+                    <p>Learn which spring foods are most beneficial for each body type and how to incorporate them.</p>
+                    <a href="index.html#ingredients" class="text-link">Explore Ingredients <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="/">SeasonFood<span>.site</span></a>
+                    <p>Your guide to eating seasonally and sustainably throughout the year.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Explore</h4>
+                        <a href="index.html#trends">Food Trends</a>
+                        <a href="index.html#ingredients">Seasonal Ingredients</a>
+                        <a href="index.html#recipes">Recipes</a>
+                        <a href="index.html#sustainability">Sustainability</a>
+                        <a href="#" class="highlight-link">Cherry Blossom Season</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>About</h4>
+                        <a href="#">Our Mission</a>
+                        <a href="#">The Team</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SeasonFood.site. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="assessment.js"></script>
+</body>
+</html> 
