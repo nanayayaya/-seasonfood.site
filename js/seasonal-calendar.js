@@ -439,20 +439,64 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('view-next-week').addEventListener('click', showNextWeek);
     };
     
-    // 初始化"查看日历"按钮事件
+    // 初始化"查看日历"按钮事件 - 使用多种选择器确保捕获按钮
     const initCalendarButton = () => {
         console.log('初始化日历按钮');
-        const viewCalendarBtn = document.getElementById('view-calendar-btn');
-        if (viewCalendarBtn) {
-            console.log('找到了日历按钮元素');
-            viewCalendarBtn.addEventListener('click', function(e) {
-                console.log('日历按钮被点击');
-                e.preventDefault();
-                window.location.href = 'seasonal-calendar.html';
-            });
-        } else {
-            console.log('未找到日历按钮元素');
+        
+        // 尝试多种选择器查找按钮
+        const calendarButtons = [
+            document.getElementById('view-calendar-btn'),                       // 通过ID
+            document.querySelector('a[href="seasonal-calendar.html"]'),        // 通过href属性
+            document.querySelector('.feature-btn[href="seasonal-calendar.html"]'), // 通过类和href组合
+            document.querySelector('a[href="seasonal-calendar.html"].feature-btn'), // 另一种组合
+            document.querySelector('.feature-card a[href="seasonal-calendar.html"]'), // 通过父元素和href
+            document.querySelector('a.button[href="seasonal-calendar.html"]'),  // 如果使用button类
+            document.querySelector('a.btn[href="seasonal-calendar.html"]')      // 如果使用btn类
+        ];
+        
+        // 找到的所有按钮添加事件
+        calendarButtons.forEach(btn => {
+            if (btn) {
+                console.log('找到了日历按钮元素:', btn);
+                // 移除可能存在的旧事件监听器
+                btn.removeEventListener('click', calendarClickHandler);
+                // 添加新的事件监听器
+                btn.addEventListener('click', calendarClickHandler);
+            }
+        });
+        
+        // 如果在特定卡片中查找
+        const seasonalFoodCard = document.querySelector('.feature-card:has(h3:contains("Seasonal Food Calendar"))');
+        if (seasonalFoodCard) {
+            const btn = seasonalFoodCard.querySelector('a');
+            if (btn) {
+                console.log('通过卡片内容找到了日历按钮:', btn);
+                btn.removeEventListener('click', calendarClickHandler);
+                btn.addEventListener('click', calendarClickHandler);
+            }
         }
+        
+        // 未找到任何按钮时记录错误
+        if (!calendarButtons.some(btn => btn !== null)) {
+            console.error('未找到任何日历按钮元素，请检查HTML结构');
+            // 尝试直接为所有按钮添加事件，以防万一
+            document.querySelectorAll('a.feature-btn, a.btn, a.button').forEach(btn => {
+                console.log('为所有可能的按钮添加事件:', btn);
+                btn.addEventListener('click', function(e) {
+                    if (btn.textContent.toLowerCase().includes('calendar')) {
+                        console.log('发现可能的日历按钮被点击:', btn.textContent);
+                        calendarClickHandler.call(this, e);
+                    }
+                });
+            });
+        }
+    };
+    
+    // 日历按钮点击处理函数
+    const calendarClickHandler = function(e) {
+        console.log('日历按钮被点击');
+        e.preventDefault();
+        window.location.href = 'seasonal-calendar.html';
     };
     
     // 初始化食物日历
@@ -462,10 +506,28 @@ document.addEventListener('DOMContentLoaded', function() {
             renderFoodCalendar();
         }
         
-        // 无论如何都初始化按钮，移除了else条件判断
+        // 无论如何都初始化按钮
         initCalendarButton();
     };
     
     // 执行初始化
     initFoodCalendar();
+    
+    // 直接绑定点击事件到文档，捕获所有可能的日历按钮点击
+    document.addEventListener('click', function(e) {
+        const target = e.target;
+        
+        // 如果点击的是链接或其内部元素
+        if (target.tagName === 'A' || target.closest('a')) {
+            const link = target.tagName === 'A' ? target : target.closest('a');
+            
+            // 检查是否是日历相关链接
+            if (link.href.includes('seasonal-calendar.html') || 
+                (link.textContent && link.textContent.toLowerCase().includes('calendar'))) {
+                console.log('通过文档事件捕获到日历链接点击:', link);
+                e.preventDefault();
+                window.location.href = 'seasonal-calendar.html';
+            }
+        }
+    });
 }); 
