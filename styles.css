@@ -121,16 +121,48 @@ p {
 
 /* 突出显示的文字样式 */
 .highlight-text {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 10px 20px;
-    border-radius: 30px;
-    display: inline-block;
+    /* 方案1: 深粉色背景+白色文字 - 樱花主题色 */
+    background-color: rgba(219, 50, 123, 0.9);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 4px;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(219, 50, 123, 0.3);
     animation: pulse 2s infinite;
     font-size: 1.1rem;
 }
+
+/* 方案2: 如果想要更深色的背景 (可取消注释启用) */
+/*
+.highlight-text {
+    background-color: rgba(66, 35, 52, 0.95);
+    color: #ffcce6;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(66, 35, 52, 0.3);
+    animation: pulse 2s infinite;
+    font-size: 1.1rem;
+}
+*/
+
+/* 方案3: 白色背景+粉色文字 (可取消注释启用) */
+/*
+.highlight-text {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #db327b;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+    font-size: 1.1rem;
+}
+*/
 
 .highlight-text i {
     margin: 0 8px;
