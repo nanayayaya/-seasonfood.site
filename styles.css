@@ -1473,4 +1473,49 @@ p {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+/* 智能图片区域相关样式 */
+.region-image {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 240px;
+    min-width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.featured-region .region-image {
+    height: 320px;
+}
+
+/* 修复智能图片区域中的图片显示 */
+.region-image .smart-image-container {
+    margin: 0;
+    height: 100%;
+}
+
+.region-image .smart-image-wrapper {
+    height: 100%;
+    margin-bottom: 0 !important;
+}
+
+.region-image .smart-image {
+    height: 100%;
+    object-fit: cover;
+}
+
+.region-card {
+    margin-bottom: 40px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .region-image {
+        height: 200px;
+    }
+    
+    .featured-region .region-image {
+        height: 240px;
+    }
 } 

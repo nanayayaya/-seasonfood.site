@@ -333,8 +333,8 @@
             <h2>Regional Spring Delicacies Around the World</h2>
             <div class="regions-container">
                 <div class="region-card featured-region">
-                    <img src="images/pexels-valeriya-842545.jpg" alt="Cherry blossom tea and sakura mochi">
-                    <div class="region-content">
+                    <div class="region-image" data-smart-image data-content-source="#japan-content" data-layout="masonry" data-show-photographer="true"></div>
+                    <div id="japan-content" class="region-content">
                         <h3><span class="highlight-text">Cherry Blossom Season in Japan</span></h3>
                         <p>During sakura (cherry blossom) season, limited-edition salt-preserved cherry blossom tea and sakura mochi become sought-after experiential foods. The delicate flavor of cherry blossoms represents the ephemeral beauty of spring, drawing crowds to traditional tea houses and sakura viewing parties (hanami).</p>
                         <a href="#" class="text-link">Explore Cherry Blossom Cuisine <i class="fas fa-arrow-right"></i></a>
@@ -342,24 +342,24 @@
                 </div>
                 
                 <div class="region-card">
-                    <img src="images/pexels-pixabay-36438.jpg" alt="Fresh artichokes and vegetables">
-                    <div class="region-content">
+                    <div class="region-image" data-smart-image data-content-source="#mediterranean-content" data-layout="grid"></div>
+                    <div id="mediterranean-content" class="region-content">
                         <h3>Mediterranean: Fresh Artichokes & Wild Asparagus</h3>
                         <p>Fresh artichokes and wild asparagus have become spring menu staples in high-end Mediterranean restaurants, showcasing the region's seasonal bounty.</p>
                     </div>
                 </div>
                 
                 <div class="region-card">
-                    <img src="images/pexels-janetrangdoan-769969.jpg" alt="Asian soup dish">
-                    <div class="region-content">
+                    <div class="region-image" data-smart-image data-content-source="#southeast-asia-content" data-layout="grid"></div>
+                    <div id="southeast-asia-content" class="region-content">
                         <h3>Southeast Asia: Humidity-Reducing Foods</h3>
                         <p>To combat spring humidity, Southeast Asian cuisine features moisture-reducing formulas like Job's tears soup with poria, adapting traditional wisdom to seasonal needs.</p>
                     </div>
                 </div>
                 
                 <div class="region-card">
-                    <img src="images/pexels-frans-van-heerden-201846-670705.jpg" alt="Nordic landscape with birch trees">
-                    <div class="region-content">
+                    <div class="region-image" data-smart-image data-content-source="#nordic-content" data-layout="grid"></div>
+                    <div id="nordic-content" class="region-content">
                         <h3>Nordic: Birch Sap Harvesting</h3>
                         <p>During the thawing period, Nordic cultures supplement vitamin D with birch sap harvesting experiences and recipes like fermented birch sap bread.</p>
                     </div>
@@ -686,6 +686,12 @@
         </div>
     </footer>
 
+    <!-- 基础脚本 -->
     <script src="script.js"></script>
+    
+    <!-- 智能图片匹配系统脚本 -->
+    <script src="js/pexels-api.js"></script>
+    <script src="js/smart-image-matcher.js"></script>
+    <script src="js/regional-smart-images.js"></script>
 </body>
 </html> 
