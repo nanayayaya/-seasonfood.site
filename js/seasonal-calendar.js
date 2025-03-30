@@ -441,22 +441,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 初始化"查看日历"按钮事件
     const initCalendarButton = () => {
+        console.log('初始化日历按钮');
         const viewCalendarBtn = document.getElementById('view-calendar-btn');
         if (viewCalendarBtn) {
+            console.log('找到了日历按钮元素');
             viewCalendarBtn.addEventListener('click', function(e) {
+                console.log('日历按钮被点击');
                 e.preventDefault();
                 window.location.href = 'seasonal-calendar.html';
             });
+        } else {
+            console.log('未找到日历按钮元素');
         }
     };
     
     // 初始化食物日历
     const initFoodCalendar = () => {
         if (document.getElementById('seasonal-food-calendar')) {
+            console.log('初始化季节性食物日历内容展示');
             renderFoodCalendar();
-        } else {
-            initCalendarButton();
         }
+        
+        // 无论如何都初始化按钮，移除了else条件判断
+        initCalendarButton();
     };
     
     // 执行初始化
