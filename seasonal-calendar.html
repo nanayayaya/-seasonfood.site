@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>季节性食物日历 - SeasonFood.site</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 季节性食物日历样式 */
+        .calendar-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .calendar-header h2 {
+            color: #2c7e50;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .current-date {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .foods-container {
+            background-color: #f9fcfa;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .food-category {
+            margin-bottom: 1.5rem;
+        }
+        
+        .food-category h3 {
+            color: #27ae60;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #e1f5ee;
+            padding-bottom: 0.5rem;
+        }
+        
+        .food-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .food-tag {
+            background-color: #e1f5ee;
+            color: #27ae60;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .food-tag:hover {
+            background-color: #27ae60;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(39, 174, 96, 0.2);
+        }
+        
+        .calendar-actions {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .calendar-btn {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .calendar-btn:hover {
+            background-color: #219653;
+        }
+        
+        .no-data {
+            color: #999;
+            font-style: italic;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        /* 月度视图样式 */
+        .month-calendar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .week-container {
+            background-color: #f9fcfa;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .week-container h3 {
+            color: #2c7e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .week-foods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .calendar-page {
+                padding: 1rem;
+            }
+            
+            .foods-container {
+                padding: 1.5rem;
+            }
+            
+            .calendar-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .calendar-btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            .month-calendar {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">SeasonFood.site</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="body-assessment.html">体质评估</a></li>
+                    <li><a href="health-goals.html">健康目标</a></li>
+                    <li><a href="allergen-filter.html">过敏原筛选</a></li>
+                    <li><a href="gallery.html">图片库</a></li>
+                    <li><a href="seasonal-calendar.html" class="active">季节食材</a></li>
+                    <li><a href="smart-image-demo.html">智能图片</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="calendar-page">
+        <section class="page-header">
+            <h1>季节性食物日历</h1>
+            <p class="section-intro">了解每周哪些春季食材达到最佳新鲜度，合理规划您的健康饮食</p>
+        </section>
+        
+        <section id="seasonal-food-calendar">
+            <!-- 日历内容将由JavaScript动态生成 -->
+            <div class="loading-indicator">
+                <p>加载食材数据中...</p>
+            </div>
+        </section>
+        
+        <section class="calendar-info">
+            <h2>为什么要吃应季食物?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌱</div>
+                    <h3>更高的营养价值</h3>
+                    <p>应季食物在适宜的自然条件下生长，营养价值更高，口感更佳。非季节性食物往往需要长途运输或储存，导致营养流失。</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌍</div>
+                    <h3>环保可持续</h3>
+                    <p>选择应季食物可减少食物里程和碳足迹，支持本地农业，减少冷藏和人工环境种植所需的能源消耗。</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>更经济实惠</h3>
+                    <p>当食物处于产季时，供应充足，价格往往更低。反季节食物需要额外的种植、运输和储存成本，价格自然更高。</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>顺应自然规律</h3>
+                    <p>传统医学理论认为，食用与节气相符的食物有助于身体适应季节变化，维持内在平衡，增强免疫力。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>SeasonFood.site致力于提供季节性饮食指南，帮助您根据自己的体质和季节变化调整饮食习惯。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p>Email: info@seasonfood.site</p>
+                    <p>电话: (123) 456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SeasonFood.site. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 加载脚本 -->
+    <script src="script.js"></script>
+    <script src="js/seasonal-calendar.js"></script>
+</body>
+</html> 
