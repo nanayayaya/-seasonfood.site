@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>季节食物图片库 - SeasonFood.site</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .gallery-header p {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+        
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .search-container input {
+            width: 60%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+        
+        .search-container button {
+            padding: 12px 20px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        
+        .search-container button:hover {
+            background-color: #219653;
+        }
+        
+        .pexels-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .pexels-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .pexels-image:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pexels-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .pexels-image p {
+            padding: 10px 15px;
+            margin: 0;
+            color: #333;
+            font-size: 0.9em;
+        }
+        
+        .pexels-image a {
+            display: block;
+            padding: 5px 15px 15px;
+            text-decoration: none;
+            color: #3498db;
+            font-size: 0.85em;
+        }
+        
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .category-tab {
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-tab:hover, .category-tab.active {
+            background-color: #27ae60;
+            color: white;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 768px) {
+            .pexels-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .search-container input {
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">SeasonFood.site</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">主页</a></li>
+                    <li><a href="body-assessment.html">体质评估</a></li>
+                    <li><a href="health-goals.html">健康目标</a></li>
+                    <li><a href="allergen-filter.html">过敏原筛选</a></li>
+                    <li><a href="gallery.html" class="active">图片库</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="gallery-container">
+            <div class="gallery-header">
+                <h1>季节食物图片库</h1>
+                <p>探索各种新鲜、健康的季节性食物图片，获取烹饪和健康饮食的灵感</p>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="搜索食物、蔬菜、水果等...">
+                <button id="search-button">搜索</button>
+            </div>
+            
+            <div class="category-tabs">
+                <div class="category-tab active" data-keyword="seasonal food">季节食物</div>
+                <div class="category-tab" data-keyword="vegetables">蔬菜</div>
+                <div class="category-tab" data-keyword="fruits">水果</div>
+                <div class="category-tab" data-keyword="whole grains">全谷物</div>
+                <div class="category-tab" data-keyword="nutrition">营养</div>
+                <div class="category-tab" data-keyword="healthy eating">健康饮食</div>
+                <div class="category-tab" data-keyword="organic food">有机食品</div>
+            </div>
+            
+            <div id="loading-indicator" class="loading">加载图片中...</div>
+            
+            <div id="pexels-gallery" class="pexels-gallery">
+                <!-- 这里将通过JavaScript动态填充图片 -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>SeasonFood.site致力于提供季节性饮食指南，帮助您根据自己的体质和季节变化调整饮食习惯。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p>Email: info@seasonfood.site</p>
+                    <p>电话: (123) 456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 SeasonFood.site. 保留所有权利。</p>
+                <p class="attribution">图片来源: <a href="https://www.pexels.com" target="_blank">Pexels</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/pexels-api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            const searchButton = document.getElementById('search-button');
+            const galleryContainer = document.getElementById('pexels-gallery');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            
+            // 初始化Pexels API
+            const pexelsFetcher = new PexelsImageFetcher('NCD0WC5TmoqFUhfgeW2zKpA60KkWL8nnXkdFWIMMwb2dSQt02S9OuOg2');
+            
+            // 默认加载季节食物图片
+            loadImages('seasonal food');
+            
+            // 搜索按钮点击事件
+            searchButton.addEventListener('click', function() {
+                const searchTerm = searchInput.value.trim();
+                if (searchTerm) {
+                    // 取消所有分类选项卡的活动状态
+                    categoryTabs.forEach(tab => tab.classList.remove('active'));
+                    loadImages(searchTerm);
+                }
+            });
+            
+            // 回车键搜索
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const searchTerm = searchInput.value.trim();
+                    if (searchTerm) {
+                        categoryTabs.forEach(tab => tab.classList.remove('active'));
+                        loadImages(searchTerm);
+                    }
+                }
+            });
+            
+            // 分类选项卡点击事件
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // 移除所有选项卡的活动状态
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // 添加当前选项卡的活动状态
+                    this.classList.add('active');
+                    
+                    // 清空搜索框
+                    searchInput.value = '';
+                    
+                    // 加载相应分类的图片
+                    const keyword = this.getAttribute('data-keyword');
+                    loadImages(keyword);
+                });
+            });
+            
+            // 加载图片函数
+            async function loadImages(keyword) {
+                try {
+                    // 显示加载指示器
+                    loadingIndicator.style.display = 'block';
+                    galleryContainer.innerHTML = '';
+                    
+                    // 获取图片
+                    const data = await pexelsFetcher.searchPhotos(keyword, 20);
+                    
+                    // 隐藏加载指示器
+                    loadingIndicator.style.display = 'none';
+                    
+                    // 显示图片
+                    pexelsFetcher.displayImages('pexels-gallery', data.photos);
+                    
+                    // 如果没有找到图片
+                    if (data.photos.length === 0) {
+                        galleryContainer.innerHTML = '<p class="no-results">没有找到相关图片，请尝试其他关键词。</p>';
+                    }
+                } catch (error) {
+                    console.error('加载图片失败:', error);
+                    loadingIndicator.style.display = 'none';
+                    galleryContainer.innerHTML = '<p class="error">加载图片时出错，请稍后再试。</p>';
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
